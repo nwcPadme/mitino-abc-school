@@ -21,7 +21,7 @@ angular.module("mitino_abc_school", ["ngCordova","ionic","ionMdInput","ionic-mat
 		$rootScope.hide_menu_sch = false ;
 		$rootScope.hide_menu_pos = false ;
 		$rootScope.hide_menu_pay = false ;
-		$rootScope.hide_menu_pro = false ;
+		$rootScope.hide_menu_prof = false ;
 		$rootScope.hide_menu_games = false ;
 
 

@@ -893,7 +893,7 @@ $ionicConfig.backButton.text("");
 	$rootScope.grid80 = parseInt($rootScope.ionWidth / 80) ;
 	$rootScope.grid128 = parseInt($rootScope.ionWidth / 128) ;
 	$rootScope.grid256 = parseInt($rootScope.ionWidth / 256) ;
-	$rootScope.last_edit = "menu" ;
+	$rootScope.last_edit = "page" ;
 	$scope.$on("$ionicView.afterEnter", function (){
 		var page_id = $state.current.name ;
 		$rootScope.page_id = page_id.replace(".","-") ;
