@@ -18,8 +18,11 @@ angular.module("mitino_abc_school", ["ngCordova","ionic","ionMdInput","ionic-mat
 		});
 
 
-		$rootScope.hide_menu_about_us = false ;
-		$rootScope.hide_menu_rate_this_app = false ;
+		$rootScope.hide_menu_sch = false ;
+		$rootScope.hide_menu_pos = false ;
+		$rootScope.hide_menu_pay = false ;
+		$rootScope.hide_menu_pro = false ;
+		$rootScope.hide_menu_games = false ;
 
 
 		$ionicPlatform.ready(function() {
@@ -201,9 +204,12 @@ angular.module("mitino_abc_school", ["ngCordova","ionic","ionMdInput","ionic-mat
 })
 
 
-.config(function($stateProvider, $urlRouterProvider,$sceDelegateProvider,$httpProvider,$ionicConfigProvider){
+
+.config(function($stateProvider,$urlRouterProvider,$sceDelegateProvider,$ionicConfigProvider,$httpProvider){
+	/** tabs position **/
+	$ionicConfigProvider.tabs.position("bottom"); 
 	try{
-		// Domain Whitelist
+	// Domain Whitelist
 		$sceDelegateProvider.resourceUrlWhitelist([
 			"self",
 			new RegExp('^(http[s]?):\/\/(w{3}.)?youtube\.com/.+$'),
@@ -216,15 +222,14 @@ angular.module("mitino_abc_school", ["ngCordova","ionic","ionMdInput","ionic-mat
 	$stateProvider
 	.state("mitino_abc_school",{
 		url: "/mitino_abc_school",
-			abstract: true,
-			templateUrl: "templates/mitino_abc_school-side_menus.html",
-			controller: "side_menusCtrl",
+		abstract: true,
+		templateUrl: "templates/mitino_abc_school-tabs.html",
 	})
 
 	.state("mitino_abc_school.about_us", {
 		url: "/about_us",
 		views: {
-			"mitino_abc_school-side_menus" : {
+			"mitino_abc_school-about_us" : {
 						templateUrl:"templates/mitino_abc_school-about_us.html",
 						controller: "about_usCtrl"
 					},
@@ -237,7 +242,7 @@ angular.module("mitino_abc_school", ["ngCordova","ionic","ionMdInput","ionic-mat
 	.state("mitino_abc_school.dashboard", {
 		url: "/dashboard",
 		views: {
-			"mitino_abc_school-side_menus" : {
+			"mitino_abc_school-dashboard" : {
 						templateUrl:"templates/mitino_abc_school-dashboard.html",
 						controller: "dashboardCtrl"
 					},
@@ -251,7 +256,7 @@ angular.module("mitino_abc_school", ["ngCordova","ionic","ionMdInput","ionic-mat
 		url: "/games",
 		cache:false,
 		views: {
-			"mitino_abc_school-side_menus" : {
+			"mitino_abc_school-games" : {
 						templateUrl:"templates/mitino_abc_school-games.html",
 						controller: "gamesCtrl"
 					},
@@ -265,7 +270,7 @@ angular.module("mitino_abc_school", ["ngCordova","ionic","ionMdInput","ionic-mat
 		url: "/login",
 		cache:false,
 		views: {
-			"mitino_abc_school-side_menus" : {
+			"mitino_abc_school-login" : {
 						templateUrl:"templates/mitino_abc_school-login.html",
 						controller: "loginCtrl"
 					},
@@ -278,7 +283,7 @@ angular.module("mitino_abc_school", ["ngCordova","ionic","ionMdInput","ionic-mat
 	.state("mitino_abc_school.menu_one", {
 		url: "/menu_one",
 		views: {
-			"mitino_abc_school-side_menus" : {
+			"mitino_abc_school-menu_one" : {
 						templateUrl:"templates/mitino_abc_school-menu_one.html",
 						controller: "menu_oneCtrl"
 					},
@@ -291,7 +296,7 @@ angular.module("mitino_abc_school", ["ngCordova","ionic","ionMdInput","ionic-mat
 	.state("mitino_abc_school.menu_two", {
 		url: "/menu_two",
 		views: {
-			"mitino_abc_school-side_menus" : {
+			"mitino_abc_school-menu_two" : {
 						templateUrl:"templates/mitino_abc_school-menu_two.html",
 						controller: "menu_twoCtrl"
 					},
@@ -305,7 +310,7 @@ angular.module("mitino_abc_school", ["ngCordova","ionic","ionMdInput","ionic-mat
 		url: "/pay",
 		cache:false,
 		views: {
-			"mitino_abc_school-side_menus" : {
+			"mitino_abc_school-pay" : {
 						templateUrl:"templates/mitino_abc_school-pay.html",
 						controller: "payCtrl"
 					},
@@ -319,9 +324,22 @@ angular.module("mitino_abc_school", ["ngCordova","ionic","ionMdInput","ionic-mat
 		url: "/pos",
 		cache:false,
 		views: {
-			"mitino_abc_school-side_menus" : {
+			"mitino_abc_school-pos" : {
 						templateUrl:"templates/mitino_abc_school-pos.html",
 						controller: "posCtrl"
+					},
+			"fabButtonUp" : {
+						template: '',
+					},
+		}
+	})
+
+	.state("mitino_abc_school.pro", {
+		url: "/pro",
+		views: {
+			"mitino_abc_school-pro" : {
+						templateUrl:"templates/mitino_abc_school-pro.html",
+						controller: "proCtrl"
 					},
 			"fabButtonUp" : {
 						template: '',
@@ -333,7 +351,7 @@ angular.module("mitino_abc_school", ["ngCordova","ionic","ionMdInput","ionic-mat
 		url: "/prof",
 		cache:false,
 		views: {
-			"mitino_abc_school-side_menus" : {
+			"mitino_abc_school-prof" : {
 						templateUrl:"templates/mitino_abc_school-prof.html",
 						controller: "profCtrl"
 					},
@@ -347,7 +365,7 @@ angular.module("mitino_abc_school", ["ngCordova","ionic","ionMdInput","ionic-mat
 		url: "/sch",
 		cache:false,
 		views: {
-			"mitino_abc_school-side_menus" : {
+			"mitino_abc_school-sch" : {
 						templateUrl:"templates/mitino_abc_school-sch.html",
 						controller: "schCtrl"
 					},
@@ -360,7 +378,7 @@ angular.module("mitino_abc_school", ["ngCordova","ionic","ionMdInput","ionic-mat
 	.state("mitino_abc_school.slide_tab_menu", {
 		url: "/slide_tab_menu",
 		views: {
-			"mitino_abc_school-side_menus" : {
+			"mitino_abc_school-slide_tab_menu" : {
 						templateUrl:"templates/mitino_abc_school-slide_tab_menu.html",
 						controller: "slide_tab_menuCtrl"
 					},

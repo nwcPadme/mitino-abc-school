@@ -1,4 +1,10 @@
 	<ion-view view-title=" Dashboard" hide-nav-bar="false" >
+		<!-- popover -->
+		<ion-nav-buttons side="right">
+			<button class="button button-icon button-clear ion-android-more-vertical" id="menu-popover" ng-click="popover.show($event)"></button>
+		</ion-nav-buttons>
+		<!-- ./popover -->
+		<ion-nav-title> Dashboard</ion-nav-title>
 		<!-- content -->
 		<ion-content delegate-handle="top" lazy-scroll  id="page-dashboard" class=" page-dashboard">
 		
@@ -6,15 +12,15 @@
 			<!-- row -->
 			<div class="row">
 				<a class="col-33 no-border light positive-bg ink"  ng-href="#/mitino_abc_school/sch" >
-					<i class="icon ion-android-calendar" ></i>
+					<i class="icon ion-ios-alarm" ></i>
 					<p>{{ "Расписание" | translate }}</p>
 				</a>
 				<a class="col-33 no-border light positive-900-bg ink"  ng-href="#/mitino_abc_school/pos" >
-					<i class="icon ion-android-contacts" ></i>
+					<i class="icon ion-ios-briefcase" ></i>
 					<p>{{ "Посещаемость" | translate }}</p>
 				</a>
 				<a class="col-33 no-border light calm-bg ink"  ng-href="#/mitino_abc_school/pay" >
-					<i class="icon ion-cash" ></i>
+					<i class="icon ion-card" ></i>
 					<p>{{ "Оплаты" | translate }}</p>
 				</a>
 			</div>
@@ -23,8 +29,8 @@
 
 			<!-- row -->
 			<div class="row">
-				<a class="col-33 no-border light calm-900-bg ink"  ng-href="#/mitino_abc_school/prof" >
-					<i class="icon ion-android-contact" ></i>
+				<a class="col-33 no-border light calm-900-bg ink"  ng-href="#/mitino_abc_school/pro" >
+					<i class="icon ion-android-person" ></i>
 					<p>{{ "Профиль" | translate }}</p>
 				</a>
 				<a class="col-33 no-border light balanced-bg ink"  ng-href="#/mitino_abc_school/games" >

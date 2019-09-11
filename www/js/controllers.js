@@ -38,13 +38,13 @@ angular.module("mitino_abc_school.controllers", [])
 	// TODO: indexCtrl --|-- $rootScope.showLanguageDialog
 	var modal_language = "";
 	modal_language += "<ion-modal-view>";
-	modal_language += "<ion-header-bar class=\"bar bar-header bar-positive-900\">";
+	modal_language += "<ion-header-bar class=\"bar bar-header bar-light\">";
 	modal_language += "<h1 class=\"title\">{{ 'Language' | translate }}</h1>";
 	modal_language += "</ion-header-bar>";
 	modal_language += "<ion-content class=\"padding\">";
 	modal_language += "<div class=\"list\">";
 	modal_language += "<ion-radio icon=\"icon ion-android-radio-button-on\" ng-model=\"language_option\" ng-value=\"'ru'\" ng-click=\"tryChangeLanguage('ru')\">Russian</ion-radio>";
-	modal_language += "<button class=\"button button-full button-positive-900\" ng-click=\"closeLanguageDialog()\">{{ 'Close' | translate }}</button>";
+	modal_language += "<button class=\"button button-full button-light\" ng-click=\"closeLanguageDialog()\">{{ 'Close' | translate }}</button>";
 	modal_language += "</div>";
 	modal_language += "</ion-content>";
 	modal_language += "</ion-modal-view>";
@@ -104,7 +104,7 @@ angular.module("mitino_abc_school.controllers", [])
 	// TODO: indexCtrl --|-- $rootScope.showFontSizeDialog
 	var modal_fontsize = "";
 	modal_fontsize += "<ion-modal-view>";
-	modal_fontsize += "<ion-header-bar class=\"bar bar-header bar-positive-900\">";
+	modal_fontsize += "<ion-header-bar class=\"bar bar-header bar-light\">";
 	modal_fontsize += "<h1 class=\"title\">{{ 'Font Size' | translate }}</h1>";
 	modal_fontsize += "</ion-header-bar>";
 	modal_fontsize += "<ion-content class=\"padding\">";
@@ -112,7 +112,7 @@ angular.module("mitino_abc_school.controllers", [])
 	modal_fontsize += "<ion-radio icon=\"icon ion-android-radio-button-on\" ng-model=\"fontsize_option\" ng-value=\"'small'\" ng-click=\"tryChangeFontSize('small');\">{{ 'Small' | translate }}</ion-radio>";
 	modal_fontsize += "<ion-radio icon=\"icon ion-android-radio-button-on\" ng-model=\"fontsize_option\" ng-value=\"'normal'\" ng-click=\"tryChangeFontSize('normal');\">{{ 'Normal' | translate }}</ion-radio>";
 	modal_fontsize += "<ion-radio icon=\"icon ion-android-radio-button-on\" ng-model=\"fontsize_option\" ng-value=\"'large'\" ng-click=\"tryChangeFontSize('large');\">{{ 'Large' | translate }}</ion-radio>";
-	modal_fontsize += "<button class=\"button button-full button-positive-900\" ng-click=\"closeFontSizeDialog()\">{{ 'Close' | translate }}</button>";
+	modal_fontsize += "<button class=\"button button-full button-light\" ng-click=\"closeFontSizeDialog()\">{{ 'Close' | translate }}</button>";
 	modal_fontsize += "</div>";
 	modal_fontsize += "</ion-content>";
 	modal_fontsize += "</ion-modal-view>";
@@ -283,75 +283,6 @@ angular.module("mitino_abc_school.controllers", [])
 		});
 	}, 300);
 	// code 
-
-	// TODO: indexCtrl --|-- controller_by_user
-	// controller by user 
-	function controller_by_user(){
-		try {
-			
-			
-		} catch(e){
-		}
-	}
-	$scope.rating = {};
-	$scope.rating.max = 5;
-	
-	// animation ink (ionic-material)
-	ionicMaterialInk.displayEffect();
-	controller_by_user();
-})
-
-// TODO: side_menusCtrl --|-- 
-.controller("side_menusCtrl", function($ionicConfig,$scope,$rootScope,$state,$location,$ionicScrollDelegate,$ionicListDelegate,$http,$httpParamSerializer,$stateParams,$timeout,$interval,$ionicLoading,$ionicPopup,$ionicPopover,$ionicActionSheet,$ionicSlideBoxDelegate,$ionicHistory,ionicMaterialInk,ionicMaterialMotion,$window,$ionicModal,base64,md5,$document,$sce,$ionicGesture,$translate,tmhDynamicLocale){
-	
-	$rootScope.headerExists = true;
-	$rootScope.ionWidth = $document[0].body.querySelector(".view-container").offsetWidth || 412;
-	$rootScope.grid64 = parseInt($rootScope.ionWidth / 64) ;
-	$rootScope.grid80 = parseInt($rootScope.ionWidth / 80) ;
-	$rootScope.grid128 = parseInt($rootScope.ionWidth / 128) ;
-	$rootScope.grid256 = parseInt($rootScope.ionWidth / 256) ;
-	$rootScope.last_edit = "-" ;
-	$scope.$on("$ionicView.afterEnter", function (){
-		var page_id = $state.current.name ;
-		$rootScope.page_id = page_id.replace(".","-") ;
-	});
-	if($rootScope.headerShrink == true){
-		$scope.$on("$ionicView.enter", function(){
-			$scope.scrollTop();
-		});
-	};
-	// TODO: side_menusCtrl --|-- $scope.scrollTop
-	$rootScope.scrollTop = function(){
-		$timeout(function(){
-			$ionicScrollDelegate.$getByHandle("top").scrollTop();
-		},100);
-	};
-	// TODO: side_menusCtrl --|-- $scope.toggleGroup
-	$scope.toggleGroup = function(group) {
-		if ($scope.isGroupShown(group)) {
-			$scope.shownGroup = null;
-		} else {
-			$scope.shownGroup = group;
-		}
-	};
-	
-	$scope.isGroupShown = function(group) {
-		return $scope.shownGroup === group;
-	};
-	
-	// TODO: side_menusCtrl --|-- $scope.redirect
-	// redirect
-	$scope.redirect = function($url){
-		$window.location.href = $url;
-	};
-	
-	// Set Motion
-	$timeout(function(){
-		ionicMaterialMotion.slideUp({
-			selector: ".slide-up"
-		});
-	}, 300);
-	// code 
 	
 	var popover_template = "";
 	popover_template += "<ion-popover-view class=\"fit\">";
@@ -384,7 +315,7 @@ angular.module("mitino_abc_school.controllers", [])
 		$scope.popover.remove();
 	});
 
-	// TODO: side_menusCtrl --|-- controller_by_user
+	// TODO: indexCtrl --|-- controller_by_user
 	// controller by user 
 	function controller_by_user(){
 		try {
@@ -541,7 +472,6 @@ $ionicConfig.backButton.text("");
 
 // TODO: gamesCtrl --|-- 
 .controller("gamesCtrl", function($ionicConfig,$scope,$rootScope,$state,$location,$ionicScrollDelegate,$ionicListDelegate,$http,$httpParamSerializer,$stateParams,$timeout,$interval,$ionicLoading,$ionicPopup,$ionicPopover,$ionicActionSheet,$ionicSlideBoxDelegate,$ionicHistory,ionicMaterialInk,ionicMaterialMotion,$window,$ionicModal,base64,md5,$document,$sce,$ionicGesture,$translate,tmhDynamicLocale){
-	$rootScope.hide_menu_games = "hide" ;
 	
 	$rootScope.headerExists = false;
 	$rootScope.ionWidth = $document[0].body.querySelector(".view-container").offsetWidth || 412;
@@ -818,7 +748,6 @@ $ionicConfig.backButton.text("");
 
 // TODO: payCtrl --|-- 
 .controller("payCtrl", function($ionicConfig,$scope,$rootScope,$state,$location,$ionicScrollDelegate,$ionicListDelegate,$http,$httpParamSerializer,$stateParams,$timeout,$interval,$ionicLoading,$ionicPopup,$ionicPopover,$ionicActionSheet,$ionicSlideBoxDelegate,$ionicHistory,ionicMaterialInk,ionicMaterialMotion,$window,$ionicModal,base64,md5,$document,$sce,$ionicGesture,$translate,tmhDynamicLocale){
-	$rootScope.hide_menu_pay = "hide" ;
 	
 	$rootScope.headerExists = false;
 	$rootScope.ionWidth = $document[0].body.querySelector(".view-container").offsetWidth || 412;
@@ -888,7 +817,6 @@ $ionicConfig.backButton.text("");
 
 // TODO: posCtrl --|-- 
 .controller("posCtrl", function($ionicConfig,$scope,$rootScope,$state,$location,$ionicScrollDelegate,$ionicListDelegate,$http,$httpParamSerializer,$stateParams,$timeout,$interval,$ionicLoading,$ionicPopup,$ionicPopover,$ionicActionSheet,$ionicSlideBoxDelegate,$ionicHistory,ionicMaterialInk,ionicMaterialMotion,$window,$ionicModal,base64,md5,$document,$sce,$ionicGesture,$translate,tmhDynamicLocale){
-	$rootScope.hide_menu_pos = "hide" ;
 	
 	$rootScope.headerExists = false;
 	$rootScope.ionWidth = $document[0].body.querySelector(".view-container").offsetWidth || 412;
@@ -956,9 +884,77 @@ $ionicConfig.backButton.text("");
 	controller_by_user();
 })
 
+// TODO: proCtrl --|-- 
+.controller("proCtrl", function($ionicConfig,$scope,$rootScope,$state,$location,$ionicScrollDelegate,$ionicListDelegate,$http,$httpParamSerializer,$stateParams,$timeout,$interval,$ionicLoading,$ionicPopup,$ionicPopover,$ionicActionSheet,$ionicSlideBoxDelegate,$ionicHistory,ionicMaterialInk,ionicMaterialMotion,$window,$ionicModal,base64,md5,$document,$sce,$ionicGesture,$translate,tmhDynamicLocale){
+	
+	$rootScope.headerExists = true;
+	$rootScope.ionWidth = $document[0].body.querySelector(".view-container").offsetWidth || 412;
+	$rootScope.grid64 = parseInt($rootScope.ionWidth / 64) ;
+	$rootScope.grid80 = parseInt($rootScope.ionWidth / 80) ;
+	$rootScope.grid128 = parseInt($rootScope.ionWidth / 128) ;
+	$rootScope.grid256 = parseInt($rootScope.ionWidth / 256) ;
+	$rootScope.last_edit = "menu" ;
+	$scope.$on("$ionicView.afterEnter", function (){
+		var page_id = $state.current.name ;
+		$rootScope.page_id = page_id.replace(".","-") ;
+	});
+	if($rootScope.headerShrink == true){
+		$scope.$on("$ionicView.enter", function(){
+			$scope.scrollTop();
+		});
+	};
+	// TODO: proCtrl --|-- $scope.scrollTop
+	$rootScope.scrollTop = function(){
+		$timeout(function(){
+			$ionicScrollDelegate.$getByHandle("top").scrollTop();
+		},100);
+	};
+	// TODO: proCtrl --|-- $scope.toggleGroup
+	$scope.toggleGroup = function(group) {
+		if ($scope.isGroupShown(group)) {
+			$scope.shownGroup = null;
+		} else {
+			$scope.shownGroup = group;
+		}
+	};
+	
+	$scope.isGroupShown = function(group) {
+		return $scope.shownGroup === group;
+	};
+	
+	// TODO: proCtrl --|-- $scope.redirect
+	// redirect
+	$scope.redirect = function($url){
+		$window.location.href = $url;
+	};
+	
+	// Set Motion
+	$timeout(function(){
+		ionicMaterialMotion.slideUp({
+			selector: ".slide-up"
+		});
+	}, 300);
+	// code 
+
+	// TODO: proCtrl --|-- controller_by_user
+	// controller by user 
+	function controller_by_user(){
+		try {
+			
+$ionicConfig.backButton.text("");			
+		} catch(e){
+		}
+	}
+	$scope.rating = {};
+	$scope.rating.max = 5;
+	
+	// animation ink (ionic-material)
+	ionicMaterialInk.displayEffect();
+	controller_by_user();
+})
+
 // TODO: profCtrl --|-- 
 .controller("profCtrl", function($ionicConfig,$scope,$rootScope,$state,$location,$ionicScrollDelegate,$ionicListDelegate,$http,$httpParamSerializer,$stateParams,$timeout,$interval,$ionicLoading,$ionicPopup,$ionicPopover,$ionicActionSheet,$ionicSlideBoxDelegate,$ionicHistory,ionicMaterialInk,ionicMaterialMotion,$window,$ionicModal,base64,md5,$document,$sce,$ionicGesture,$translate,tmhDynamicLocale){
-	$rootScope.hide_menu_prof = "hide" ;
 	
 	$rootScope.headerExists = false;
 	$rootScope.ionWidth = $document[0].body.querySelector(".view-container").offsetWidth || 412;
@@ -966,7 +962,7 @@ $ionicConfig.backButton.text("");
 	$rootScope.grid80 = parseInt($rootScope.ionWidth / 80) ;
 	$rootScope.grid128 = parseInt($rootScope.ionWidth / 128) ;
 	$rootScope.grid256 = parseInt($rootScope.ionWidth / 256) ;
-	$rootScope.last_edit = "menu" ;
+	$rootScope.last_edit = "page" ;
 	$scope.$on("$ionicView.afterEnter", function (){
 		var page_id = $state.current.name ;
 		$rootScope.page_id = page_id.replace(".","-") ;
@@ -1028,7 +1024,6 @@ $ionicConfig.backButton.text("");
 
 // TODO: schCtrl --|-- 
 .controller("schCtrl", function($ionicConfig,$scope,$rootScope,$state,$location,$ionicScrollDelegate,$ionicListDelegate,$http,$httpParamSerializer,$stateParams,$timeout,$interval,$ionicLoading,$ionicPopup,$ionicPopover,$ionicActionSheet,$ionicSlideBoxDelegate,$ionicHistory,ionicMaterialInk,ionicMaterialMotion,$window,$ionicModal,base64,md5,$document,$sce,$ionicGesture,$translate,tmhDynamicLocale){
-	$rootScope.hide_menu_sch = "hide" ;
 	
 	$rootScope.headerExists = false;
 	$rootScope.ionWidth = $document[0].body.querySelector(".view-container").offsetWidth || 412;

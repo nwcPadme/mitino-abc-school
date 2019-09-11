@@ -1,4 +1,10 @@
 	<ion-view view-title=" Оплаты" hide-nav-bar="true" >
+		<!-- popover -->
+		<ion-nav-buttons side="right">
+			<button class="button button-icon button-clear ion-android-more-vertical" id="menu-popover" ng-click="popover.show($event)"></button>
+		</ion-nav-buttons>
+		<!-- ./popover -->
+		<ion-nav-title> Оплаты</ion-nav-title>
 		<!-- content -->
 		<ion-content delegate-handle="top" lazy-scroll  id="page-pay" class="page-pay">
 		<iframe data-tap-disabled="true" class="fullscreen" src="http://mitino.school-abc.ru/GymSubscriptionHistory/

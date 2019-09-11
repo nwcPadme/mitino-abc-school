@@ -238,18 +238,18 @@ ul.rating li i{color:#FFCC00}
 
 /** option page **/
 #page-dashboard{background: url("../data/images/background/bg0.jpg") no-repeat left top fixed;background-size: cover;width:100%;height:100%;background-repeat:no-repeat;}
-#mitino_abc_school-games .has-header{top:0;}
-#mitino_abc_school-games .has-header:before{content:" ";height:0;display:block}
-#mitino_abc_school-login .has-header{top:0;}
-#mitino_abc_school-login .has-header:before{content:" ";height:0;display:block}
-#mitino_abc_school-pay .has-header{top:0;}
-#mitino_abc_school-pay .has-header:before{content:" ";height:0;display:block}
-#mitino_abc_school-pos .has-header{top:0;}
-#mitino_abc_school-pos .has-header:before{content:" ";height:0;display:block}
-#mitino_abc_school-prof .has-header{top:0;}
-#mitino_abc_school-prof .has-header:before{content:" ";height:0;display:block}
-#mitino_abc_school-sch .has-header{top:0;}
-#mitino_abc_school-sch .has-header:before{content:" ";height:0;display:block}
+#page-games.has-header{top:0;}
+#page-games.has-header:before{content:" ";height:0;display:block}
+#page-login.has-header{top:0;}
+#page-login.has-header:before{content:" ";height:0;display:block}
+#page-pay.has-header{top:0;}
+#page-pay.has-header:before{content:" ";height:0;display:block}
+#page-pos.has-header{top:0;}
+#page-pos.has-header:before{content:" ";height:0;display:block}
+#page-prof.has-header{top:0;}
+#page-prof.has-header:before{content:" ";height:0;display:block}
+#page-sch.has-header{top:0;}
+#page-sch.has-header:before{content:" ";height:0;display:block}
 /** page dashboard **/
 
 .dashboard-panel .row .col-33 {text-decoration-line: unset;text-align: center;padding: 22px 20px 10px 20px;border:0;}

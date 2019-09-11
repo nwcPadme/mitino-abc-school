@@ -1,4 +1,10 @@
 	<ion-view view-title=" About Us" hide-nav-bar="false" >
+		<!-- popover -->
+		<ion-nav-buttons side="right">
+			<button class="button button-icon button-clear ion-android-more-vertical" id="menu-popover" ng-click="popover.show($event)"></button>
+		</ion-nav-buttons>
+		<!-- ./popover -->
+		<ion-nav-title> About Us</ion-nav-title>
 		<!-- content -->
 		<ion-content delegate-handle="top" lazy-scroll  id="page-about_us" class="padding page-about_us">
 		

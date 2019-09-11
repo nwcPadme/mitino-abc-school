@@ -107,7 +107,7 @@ angular.module("mitino_abc_school.services", [])
 		link: function($scope, $element, $attr){
 			var starty = $scope.$eval($attr.headerShrink) || 0;
 			var shrinkAmt;
-			var header = $document[0].body.querySelector(".page-title");
+			var header = $document[0].body.querySelector(".navbar-title");
 			var headerHeight = $attr.offsetHeight || 44;
 			$element.bind("scroll", function(e){
 				var scrollTop = null;
